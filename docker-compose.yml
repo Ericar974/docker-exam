@@ -14,3 +14,10 @@ services:
     - '3306:3306'
     environment:
       - MYSQL_ROOT_PASSWORD=root
+  frontend:
+    container_name: docker_frontend
+    hostname: docker_frontend
+    build: ./frontend
+    ports:
+    - '4000:3000'
+
