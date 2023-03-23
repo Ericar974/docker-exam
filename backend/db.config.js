@@ -1,7 +1,7 @@
 module.exports = {
-  HOST: "localhost",
-  USER: "root",
-  PASSWORD: "root",
-  DATABASE: "docker_exam",
-  PORT: "3306",
+  HOST: process.env.HOST,
+  USER: process.env.DB_USER,
+  PASSWORD: process.env.PASSWORD,
+  DATABASE: process.env.DATABASE,
+  PORT: process.env.PORT,
 };

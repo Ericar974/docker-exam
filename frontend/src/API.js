@@ -1,13 +1,14 @@
-//import axios from "axios";
+import axios from "axios";
 
 export const getTodos = async () => {
-  console.log('getTodos')
+  return axios.get('http://localhost:4001/todos')
 };
 
 export const createTodo = async (formData) => {
-  console.log(formData)
+  return axios.post('http://localhost:4001/todos', formData)
+  
 };
 
 export const deleteTodo = async (todoId) => {
-  console.log('deleteTodo')
+  return axios.delete('http://localhost:4001/todos/' + todoId)
 };

@@ -2,18 +2,26 @@ version: '3.7'
 services:
   backend:
     container_name: docker_backend
-    hostname: iim_backend
+    hostname: docker_backend
     build: ./backend
     ports:
       - '4001:4001'
+    environment:
+      - HOST=${HOST}
+      - DB_USER=${DB_USER}
+      - PASSWORD=${PASSWORD}
+      - DATABASE=${DATABASE}
+      - PORT=${PORT}
   mysql:
     container_name: docker_mysql
     hostname: docker_mysql
-    build: ./backend
+    image: mysql:8.0
     ports:
     - '3306:3306'
     environment:
-      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=${PASSWORD}
+    volumes:
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
   frontend:
     container_name: docker_frontend
     hostname: docker_frontend
