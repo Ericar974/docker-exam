@@ -24,12 +24,10 @@ app.get("/todos", async (req, res) => {
 });
 
 app.post("/todos", async (req, res) => {
-  //TO_MODIFY
   res.send("hello post")
 });
 
 app.delete("/todos/:todoId", async (req, res) => {
-  //TO_MODIFY
   res.send("hello delete")
 });
 
